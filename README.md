@@ -37,8 +37,24 @@ For now: mutate away!
   * `giveBirthday({firstName: 'Colin', lastName: 'Jaffe', age: 39}) // -> {firstName: 'Colin', lastName: 'Jaffe', age: 40}
   * `giveBirthday({firstName: 'Petra', lastName: 'Solano', age: 29}) // -> {firstName: 'Solano', lastName: 'Solano', age: 30}
   * `giveBirthday({firstName: 'Baby', lastName: 'Jaffe'}) // -> {firstName: 'Baby', lastName: 'Jaffe', age: 1}
-  * `marry` - description and examples coming soon, see tests
-  * `divorce` - description and examples coming soon, see tests
+* `marry` - sets the marital status of both given people to `true` and sets each person's `spouseName` property to be the full name of the other
+
+```javascript
+const person1 = {firstName: 'Colin', lastName: 'Jaffe', married: false}
+const person2 = {firstName: 'Petra', lastName: 'Solano', married: false}
+marry(person1, person2)
+console.log(person1) // -> {firstName: 'Colin', lastName: 'Jaffe', married: true, spouseName: 'Petra Solano'}
+console.log(person2) // -> {firstName: 'Petra', lastName: 'Solano', married: true, spouseName: 'Colin Jaffe'}
+```
+
+* `divorce` - changes the marital status to `false` and removes the `spouseName` property from both given people
+```javascript
+marry(person1, person2)
+const person1 = {firstName: 'Colin', lastName: 'Jaffe', married: true, spouseName: 'Petra Solano'}
+const person2 = {firstName: 'Petra', lastName: 'Solano', married: true, spouseName: 'Colin Jaffe'}
+console.log(person1) // -> {firstName: 'Colin', lastName: 'Jaffe', married: false} 
+console.log(person2) // -> {firstName: 'Petra', lastName: 'Solano', married: false}
+```
 
 
 ### Tips

@@ -64,13 +64,16 @@ const setAge = function(personObject, addAge){
  *****************/
 
 const giveBirthday = function(personObject){
+  let agePropertyExist = "age" in personObject;
+
+  if(agePropertyExist === true){
+    personObject.age = personObject.age + 1
+  }
+  else {
   personObject.age = 1
-  if(personObject.includes('age')){
-    console.log('yes')
   }
 
 }
-
 
 //------------------------------------------------------------------------------------------//
 //------------------------------------------------------------------------------------------//
